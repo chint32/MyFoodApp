@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.chstudios.myfoodapp.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+        <argument
+            android:name="list_name"
+            app:argType="string"
+            android:defaultValue="Hello World" />
+        <argument android:name="upc"
+            app:argType="string"
+            android:defaultValue="upc" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.chstudios.myfoodapp.ui.InventoryFragment"
+        android:label="fragment_inventory"
+        tools:layout="@layout/fragment_inventory" >
+        <action
+            android:id="@+id/action_inventoryFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.chstudios.myfoodapp.ui.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" />
+</navigation>
